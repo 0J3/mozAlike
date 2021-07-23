@@ -6,6 +6,8 @@ const style = gss(stylesheet);
 
 const componentVersion = '1.0.0';
 
+console.warn('(mozAlike:00001) [DEP0001] PotentialDeprecationWarning: MozAlike/link might get deprecated in the moderately near future! If not, it will be way less frequently updated basis! See https://github.com/Phonin/Components/ for a potential alternative built on this link element')
+
 export default class MozLink extends Component<{
   LinkComponent?: typeof Component;
   href?: string;
