@@ -1,4 +1,4 @@
-import { Component } from 'preact';
+import { Component,h } from 'preact';
 import getGetStyleFunc from '../getStyle';
 import styles from './style.scss';
 const style = getGetStyleFunc(styles);
