@@ -19,8 +19,8 @@ export default class MozLink extends Component<{
 }> {
   render() {
     const Classes = `${style('mozLink')}${
-      this.props.className ? ' ' + this.props.className : ''
-    }${this.props.class ? ' ' + this.props.class : ''}`;
+      this.props.className ? ` ${  this.props.className}` : ''
+    }${this.props.class ? ` ${  this.props.class}` : ''}`;
 
     if (this.props.LinkComponent)
       return (
@@ -35,25 +35,24 @@ export default class MozLink extends Component<{
           {this.props.children}
         </this.props.LinkComponent>
       );
-    else
-      return (
-        <Link
-          href={this.props.href}
-          class={Classes}
-          target={this.props.target}
-          onClick={
-            this.props.target === 'blank'
-              ? () => {
-                  window.open(this.props.href);
-                }
-              : () => {}
-          }
-          data-link={this.props.href}
-          data-mozAlikeComponent={'lgbt.nora.MozAlike.Link'}
-          data-mozAlikeComponentVersion={componentVersion}
-        >
-          {this.props.children}
-        </Link>
-      );
+    return (
+      <Link
+        href={this.props.href}
+        class={Classes}
+        target={this.props.target}
+        onClick={
+          this.props.target === 'blank'
+            ? () => {
+              window.open(this.props.href);
+            }
+            : () => {}
+        }
+        data-link={this.props.href}
+        data-mozAlikeComponent={'lgbt.nora.MozAlike.Link'}
+        data-mozAlikeComponentVersion={componentVersion}
+      >
+        {this.props.children}
+      </Link>
+    );
   }
 }

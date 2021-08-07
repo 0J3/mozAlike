@@ -12,7 +12,7 @@ export default class MozButton extends Component<{
   secondary?: boolean;
 }> {
   render() {
-    let btnType: string = 'Primary';
+    let btnType = 'Primary';
     if (this.props.secondary) {
       btnType = 'Secondary';
     }
